@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<robot name="quadruped_robot">
+  <material name="silver">
+    <color rgba="0.700 0.700 0.700 1.000"/>
+  </material>
+
+  <link name="world">
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.5"/>
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.05507185281116725 0.03595136507408738 -0.006787816738676939"/>
+      <mass value="0.8505876350848196"/>
+      <inertia ixx="0.000349" ixy="-0.0" ixz="0.0" iyy="0.000569" iyz="-1e-06" izz="0.000337"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://quadruped_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://quadruped_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.04451271855900203 -0.041457280939758465 -0.0009299610107957037"/>
+      <mass value="3.239131070009172"/>
+      <inertia ixx="1.751712" ixy="0.00137" ixz="-0.000137" iyy="2.979834" iyz="-6.1e-05" izz="1.45102"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.055093 -0.020059 0.00717"/>
+      <geometry>
+        <mesh filename="package://quadruped_robot_description/meshes/link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.055093 -0.020059 0.00717"/>
+      <geometry>
+        <mesh filename="package://quadruped_robot_description/meshes/link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.02169126313311376 0.007298692486660284 -0.07155476188816372"/>
+      <mass value="0.8144432831816921"/>
+      <inertia ixx="0.006618" ixy="-0.0" ixz="-0.001671" iyy="0.007171" iyz="-0.0" izz="0.000601"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.274775 0.043941 0.007053"/>
+      <geometry>
+        <mesh filename="package://quadruped_robot_description/meshes/link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.274775 0.043941 0.007053"/>
+      <geometry>
+        <mesh filename="package://quadruped_robot_description/meshes/link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="revolute_1" type="revolute">
+    <origin rpy="0 0 0" xyz="0.055093 0.020059 -0.00717"/>
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <axis xyz="0.0 -1.0 -0.0"/>
+    <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
+  </joint>
+  <joint name="revolute_2" type="revolute">
+    <origin rpy="0 0 0" xyz="0.219682 -0.064 0.000117"/>
+    <parent link="link1"/>
+    <child link="link2"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
+  </joint>
+</robot>
