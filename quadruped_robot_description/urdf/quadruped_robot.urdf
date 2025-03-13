@@ -1,7 +1,11 @@
 <?xml version="1.0" ?>
 <robot name="quadruped_robot">
-  <material name="silver">
-    <color rgba="0.700 0.700 0.700 1.000"/>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.000"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.000"/>
   </material>
 
   <link name="world">
@@ -15,76 +19,157 @@
 
   <link name="base_link">
     <inertial>
-      <origin xyz="0.05507185281116725 0.03595136507408738 -0.006787816738676939" rpy="0 0 0"/>
-      <mass value="0.8505876350848196"/>
+      <origin xyz="-1.403432864127373e-05 0.04089216246839065 0.00038276930859894374" rpy="0 0 0"/>
+      <mass value="0.8505876351103128"/>
       <inertia ixx="0.000349" iyy="0.000569" izz="0.000337" ixy="-0.0" iyz="-1e-06" ixz="0.0"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://quadruped_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <material name="black"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://quadruped_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <link name="link1">
+
+  <link name="leg_3">
     <inertial>
-      <origin xyz="0.04451271855900203 -0.041457280939758465 -0.0009299610107957037" rpy="0 0 0"/>
-      <mass value="3.239131070009172"/>
-      <inertia ixx="1.751712" iyy="2.979834" izz="1.45102" ixy="0.00137" iyz="-6.1e-05" ixz="-0.000137"/>
+      <origin xyz="-2.5004270480943896e-05 -0.008625177783152922 -0.0013116403224834225" rpy="0 0 0"/>
+      <mass value="0.657885902828282"/>
+      <inertia ixx="0.407634" iyy="0.769441" izz="0.410714" ixy="1.4e-05" iyz="-3e-06" ixz="0.0"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="-0.055093 -0.020059 0.00717"/>
+      <origin xyz="0.0 -0.025 -0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://quadruped_robot_description/meshes/link1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://quadruped_robot_description/meshes/leg_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.055093 -0.020059 0.00717"/>
+      <origin xyz="0.0 -0.025 -0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://quadruped_robot_description/meshes/link1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://quadruped_robot_description/meshes/leg_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <link name="link2">
+
+  <link name="gear_2">
     <inertial>
-      <origin xyz="0.021610528972638987 0.00730172767196164 -0.07190508804502989" rpy="0 0 0"/>
-      <mass value="0.8144432831816921"/>
-      <inertia ixx="0.006618" iyy="0.007171" izz="0.000601" ixy="-0.0" iyz="0.0" ixz="0.001671"/>
+      <origin xyz="-1.4034328315678919e-05 -0.012107838485283868 0.00038276913820788224" rpy="0 0 0"/>
+      <mass value="0.8505876351103128"/>
+      <inertia ixx="0.000349" iyy="0.000569" izz="0.000337" ixy="-0.0" iyz="-1e-06" ixz="0.0"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="-0.274775 0.043941 0.007053"/>
+      <origin xyz="-0.0 -0.001 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://quadruped_robot_description/meshes/link2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://quadruped_robot_description/meshes/gear_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <material name="black"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.274775 0.043941 0.007053"/>
+      <origin xyz="-0.0 -0.001 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://quadruped_robot_description/meshes/link2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://quadruped_robot_description/meshes/gear_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <joint name="revolute_1" type="revolute">
-    <origin xyz="0.055093 0.020059 -0.00717" rpy="0 0 0"/>
+
+  <link name="leg_2">
+    <inertial>
+      <origin xyz="0.10575373481330458 -0.006986344256198283 -0.03803796859205587" rpy="0 0 0"/>
+      <mass value="2.0086761793539414"/>
+      <inertia ixx="1.422506" iyy="6.564512" izz="5.194908" ixy="-0.081587" iyz="-0.001885" ixz="-0.018399"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0 0.024 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://quadruped_robot_description/meshes/leg_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.0 0.024 0.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://quadruped_robot_description/meshes/leg_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="leg_1">
+    <inertial>
+      <origin xyz="-0.12478961259494932 0.007301545484986599 -0.09052117453496765" rpy="0 0 0"/>
+      <mass value="0.8145141492777322"/>
+      <inertia ixx="0.00304" iyy="0.007185" izz="0.004192" ixy="0.0" iyz="0.0" ixz="-0.003392"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.190612 0.044 0.11005" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://quadruped_robot_description/meshes/leg_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.190612 0.044 0.11005" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://quadruped_robot_description/meshes/leg_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="revolute1" type="revolute">
+    <origin xyz="0.0 0.025 0.0" rpy="0 0 0"/>
     <parent link="base_link"/>
-    <child link="link1"/>
-    <axis xyz="0.0 -1.0 -0.0"/>
-    <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
-  </joint>
-  <joint name="revolute_2" type="revolute">
-    <origin xyz="0.219682 -0.064 0.000117" rpy="0 0 0"/>
-    <parent link="link1"/>
-    <child link="link2"/>
+    <child link="leg_3"/>
     <axis xyz="0.0 -1.0 0.0"/>
-    <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
+    <limit effort="50" lower="-3.141592" upper="3.141592" velocity="20.0" />
+    <dynamics damping="0.0" friction="10.0"/>
   </joint>
+
+  <joint name="fixed1" type="fixed">
+    <origin xyz="0.0 -0.024 -0.0" rpy="0 0 0"/>
+    <parent link="leg_3"/>
+    <child link="gear_2"/>
+  </joint>
+
+  <joint name="fixed2" type="fixed">
+    <origin xyz="0.0 -0.025 0.0" rpy="0 0 0"/>
+    <parent link="gear_2"/>
+    <child link="leg_2"/>
+  </joint>
+
+  <joint name="revolute2" type="revolute">
+    <origin xyz="0.190612 -0.02 -0.11005" rpy="0 0 0"/>
+    <parent link="leg_2"/>
+    <child link="leg_1"/>
+    <axis xyz="0.0 -1.0 -0.0"/>
+    <limit effort="50" lower="-3.141592" upper="3.141592" velocity="20.0" />
+    <dynamics damping="0.0" friction="10.0"/>
+  </joint>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Black</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="leg_3">
+    <material>Gazebo/White</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="gear_2">
+    <material>Gazebo/Black</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="leg_2">
+    <material>Gazebo/White</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="leg_1">
+    <material>Gazebo/White</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
 </robot>
