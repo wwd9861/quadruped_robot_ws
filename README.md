@@ -5,6 +5,7 @@ ros2 launch quadruped_robot_description quadruped_robot.launch.py
 ```
 rviz2
 ```
+```
 ros2 run quadruped_robot leg_control 
 ```
 
