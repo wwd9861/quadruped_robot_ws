@@ -1,4 +1,3 @@
 # quadruped_robot_ws
 
-
-![Screencastfrom03-13-2025012515AM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/eae5b0be-ff60-4f3e-bca9-5beafe76c618)
+![Screencastfrom03-13-2025062744PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/38159e15-f05f-48ec-916e-a37110791943)
